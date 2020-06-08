@@ -18,6 +18,14 @@ ex.: ./programa "0-15-16-20-21-60"
 
 Foi utilizado o algoritmo **xorshift+** como gerador de números aleatórios e com 5 workers (goroutines) para adivinhação. A validação foi feita com base no checksum dos números, comparando os arrays apenas com checksums iguais.
 
+Também foi dada uma opção de utilizar o algoritmo Bruteforce. Para isso, utilize a variavel
+de ambiente `ALG` e configure como `brute` (veja abaixo).
+
+Valores suportados na variável ALG:
+
+ - `brute`
+ - `xorshift` (default)
+
 ## build
 
 ```bash
@@ -28,4 +36,10 @@ go build
 
 ```bash
 ./sena-challenge 1-2-3-4-5-6
+```
+
+Com algoritmo bruteforce
+
+```bash
+ALG=brute ./sena-challenge 1-2-3-4-5-6
 ```
